@@ -1,4 +1,4 @@
-package Lab01;
+package Lab01.TheVeryFirstJavaPrograms;
 // Example 5: ShowTwoNumbers.java
 import javax.swing.JOptionPane;
 public class ShowTwoNumbers {

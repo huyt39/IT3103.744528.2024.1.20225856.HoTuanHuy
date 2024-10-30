@@ -1,4 +1,4 @@
-package Lab01;
+
 import java.util.Scanner; //nhap lop Scanner tu thu vien java.util => nhan du lieu dau vao tu nguoi dung thong qua keyboard
 public class InputFromKeyboard {
     public static void main(String[] args){

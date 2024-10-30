@@ -1,4 +1,4 @@
-package Lab01;
+package Lab01.TheVeryFirstJavaPrograms;
 
 //Example 1: HelloWorld.java
 // Text-printing program

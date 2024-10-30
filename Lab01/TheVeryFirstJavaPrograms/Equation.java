@@ -1,4 +1,4 @@
-package Lab01;
+package Lab01.TheVeryFirstJavaPrograms;
 
 import javax.swing.JOptionPane;
 public class Equation {
