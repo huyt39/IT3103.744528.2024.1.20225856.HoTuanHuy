@@ -19,6 +19,29 @@ public class Cart {
         }
     }
 
+    //Cho phep them danh sach cac doi tuong DigitalVideoDisc vao gio hang
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList){
+        for(DigitalVideoDisc dvd: dvdList){
+            this.addDigitalVideoDisc(dvd);
+        }
+    }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        if (qtyOrdered + 2 > MAX_NUMBERS_ORDERED) {
+            System.out.println("The cart is full.");
+            return;
+        }
+    
+        items.add(dvd1);
+        qtyOrdered++;
+        System.out.println("The disc has been added to the cart.");
+    
+        items.add(dvd2);
+        qtyOrdered++;
+        System.out.println("The disc has been added to the cart.");
+    }
+    
+
     // Phương thức xóa DVD khỏi giỏ hàng
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
             if (items.remove(disc)) {
