@@ -1,4 +1,4 @@
-package Lab02.AimsProject;
+package Lab.AimsProject.src.hust.soict.hedspi.disc;
 
 import java.util.Objects;
 
@@ -96,6 +96,16 @@ public class DigitalVideoDisc {
     public void setCost(float cost) {
         this.cost = cost;
     }
+
+    public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title); 
+    }
+
+    @Override
+    public String toString() {
+       return "DVD - " + title + " - " + category + " - " + director + " - " + length + " - " + cost + " $";
+}
+
 
     @Override
     public boolean equals(Object o) {

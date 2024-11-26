@@ -1,4 +1,4 @@
-package Lab02.AimsProject;
+package Lab.AimsProject.src.hust.soict.hedspi.cart;
 import java.util.ArrayList;
 public class Cart {
     // Hằng số cho số lượng DVD tối đa có thể đặt trong giỏ hàng
@@ -62,11 +62,33 @@ public class Cart {
         }    
         return total;
     }
-    public void display(){
-        System.out.println("Items in cart:");
-        for(DigitalVideoDisc disc:items){
-            System.out.println(disc.getTitle() + " | " + disc.getCategory() +" | " + disc.getDirector() + " | " + disc.getLength() + " | $" + disc.getCost());
-        }
-    }
-}
+    public void print(){
+        System.out.println("***********************CART***********************");
+        System.out.println("Ho Tuan Huy - 20225856: Ordered Items:");
 
+        for (int i = 0; i < qtyOrdered; i++){
+            System.out.println(items.get(i).toString());
+        }
+
+        System.out.println("Ho Tuan Huy - 20225856: Total cost: " + totalCost());
+        System.out.println("**************************************************");
+    }
+    
+
+    //search by Id
+    public DigitalVideoDisc searchById(int id) {
+        return items.stream()
+                .filter(disc -> disc.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+    
+    // search by title
+    public DigitalVideoDisc searchByTitle(String title) {
+        return items.stream()
+                .filter(disc -> disc.isMatch(title))
+                .findFirst()
+                .orElse(null);
+    }
+
+}

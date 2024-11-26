@@ -1,4 +1,4 @@
-package Lab02.AimsProject;
+package Lab.AimsProject.src.hust.soict.hedspi.aims;
 
 public class Aims {
     public static void main(String[] args){
