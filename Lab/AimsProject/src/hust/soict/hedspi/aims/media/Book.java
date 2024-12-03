@@ -46,7 +46,7 @@ public class Book extends Media {
         + getTitle() + " - "
         + getCategory() + " - ");
         for (String author: authors){
-            System.put.print(author + " - ");
+            System.out.print(author + " - ");
         }
         System.out.println(getCost() + "$");
     }
