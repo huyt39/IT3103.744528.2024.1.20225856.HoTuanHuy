@@ -15,6 +15,10 @@ public class CompactDisc extends Disc implements Playable {
         super(id, title, category, cost, director, length);
         this.artist = artist;
     }
+    public CompactDisc(String title, String category, String artist, float cost){
+        super(title, category, artist, cost);
+    }
+
 
     //Getter and Setter
     public String getArtist() {return artist;}
@@ -40,6 +44,13 @@ public class CompactDisc extends Disc implements Playable {
         }
         tracks.remove(indexOfTrack);
         System.out.println("Remove track successfully");
+    }
+
+    public List<Track> getTracks(){
+        return tracks;
+    }
+    public void setTracks(ArrayList<Track> tracks){
+        this.tracks = tracks;
     }
 
     //Method to get the total length of the CD by summing the lengths of all tracks
