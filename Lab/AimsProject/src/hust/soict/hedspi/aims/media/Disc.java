@@ -9,6 +9,10 @@ public class Disc extends Media {
     //Constructor for a disc with ID and title
     public Disc(int id, String title){super(id, title);}
 
+    public Disc(String title, String category, String director, float cost){
+        super(title, category, cost);
+    }
+
     //Constructor for a disc with ID, title, category, cost, director and length
     public Disc(int id, String title, String category, float cost, String director, int length){
         super(id, title, category, cost);
