@@ -1,43 +1,77 @@
 package Lab.AimsProject.src.hust.soict.hedspi.aims.store;
 
+import Lab.AimsProject.src.hust.soict.hedspi.aims.media.Media;
 import Lab.AimsProject.src.hust.soict.hedspi.disc.DigitalVideoDisc;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//Store class represents a media store that manages a collection of Media items
 public class Store {
-    private final List<DigitalVideoDisc> itemsInStore;
+    //Attribute
+    private List<Media> itemsInStore = new ArrayList<>(); // List to store available Media items in the store
 
-    public Store(List<DigitalVideoDisc> itemsInStore) {
-        this.itemsInStore = new ArrayList<>(itemsInStore);
+    //Constructor
+    public Store() {
     }
 
-    // add item method
-    public void addItem(DigitalVideoDisc item) {
-        if (itemsInStore.contains(item)) {
-            System.out.println("Ho Tuan Huy - 20225856: Already existed in store.");
-            return;
+    // method to add a new media to the store
+    public void addMedia(Media media) {
+        //Add media to the store
+        itemsInStore.add(media);
+        //Notify that media has been added successfully
+        System.out.println("Ho Tuan Huy - 20225856: Added successfully");
+    }
+
+    // method to remove a media from the store
+    public void removeMedia(Media media) {
+       //Search for media in the store 
+       int indexOfRemoved = itemsInStore.indexOf(media);
+       //if the media is not found 
+       if (indexOfRemoved == -1){
+        System.out.println("Ho Tuan Huy 20225856 - Not found media!");
+        return;
+       }
+       //Remove the media
+       itemsInStore.remove(indexOfRemoved);
+       //Notify that media has been removed successfully
+       System.out.println("Ho Tuan Huy 20225856 - Removed successfully");
+    }
+
+    //Getters and Setters
+    //Getter for the list of items in the store
+    public List<Media> getItemsInStore() {return itemsInStore;}
+
+    //Setter for the list of items in the store
+    public void setItemsInStore(List<Media> itemsInStore){
+        this.itemsInStore = itemsInStore;
+    }
+
+    public void print(){
+        System.out.println("**********LIST ITEMS IN STORE**********");
+        for(Media media: this.itemsInStore){
+            System.out.println(media.toString());
         }
-        itemsInStore.add(item);
-        System.out.println("Ho Tuan Huy - 20225856: Added " + item.getTitle() + " to store.");
+        System.out.println("****************************************");
     }
 
-    // remove item method
-    public void removeItem(DigitalVideoDisc item) {
-        if (!itemsInStore.contains(item)) {
-            System.out.println("Ho Tuan Huy - 20225856: Not exist.");
-            return;
+    public Media findMediaById(int id){
+        for(Media media: itemsInStore){
+            if(media.getId() == id){
+                return media;
+            }
         }
-        itemsInStore.remove(item);
-        System.out.println("Ho Tuan Huy - 20225856: Deleted " + item.getTitle() + " from store.");
+        return null;
     }
 
-    // show items in store method
-    public void showItems() {
-        System.out.println("*******************STORE*******************");
-        System.out.println("Ho Tuan Huy - 20225856: DVD List:");
-        Arrays.stream(itemsInStore.toArray()).
-                forEach(item -> System.out.println(item.toString()));
+    public Media findMediaByTitle(String title){
+        for(Media media: itemsInStore){
+            if(media.getTitle().equalsIgnoreCase(title)){
+                return media;
+            }
+        }
+        return null;
     }
 }
