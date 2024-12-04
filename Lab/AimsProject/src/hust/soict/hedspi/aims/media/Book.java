@@ -11,6 +11,9 @@ public class Book extends Media {
     public Book(int id, String title, String category, float cost){
         super(id, title, category, cost);
     }
+    public Book(String title, String category, float cost){
+        super(title, category, cost);
+    }
 
     //Method to add an author
     //If the author is already in the list, display a message; otherwise, add the author and display a success message
