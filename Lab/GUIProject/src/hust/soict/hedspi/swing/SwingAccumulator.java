@@ -22,19 +22,19 @@ public class SwingAccumulator extends JFrame {
         Container cp = getContentPane();
         cp.setLayout(new GridLayout(2, 2)); //2r and 2c
 
-        cp.add(new JLabel("Enter an integer: "));
+        cp.add(new JLabel("Ho Tuan Huy 20225856 - Enter an integer: "));
 
         tfInput = new JTextField(10); //10 cols
         cp.add(tfInput);
         tfInput.addActionListener(new TFInputListener());
 
-        cp.add(new JLabel("The accumulated sum is: "));
+        cp.add(new JLabel("Ho Tuan Huy 20225856 - The accumulated sum is: "));
 
         tfOutput = new JTextField(10); //10 cols
         tfOutput.setEditable(false);
         cp.add(tfOutput);
 
-        setTitle("Swing accumulator");
+        setTitle("Ho Tuan Huy 20225856 - Swing accumulator");
         setSize(350, 120); //w and h
         setVisible(true);
     }

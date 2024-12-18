@@ -17,19 +17,19 @@ public class AWTAccumulator extends Frame {
     public AWTAccumulator(){
         setLayout(new GridLayout(2, 2)); //2 rows and 2 cols
         
-        add(new Label("Enter an integer: "));
+        add(new Label("Ho Tuan Huy 20225856 - Enter an integer: "));
 
         tfInput = new TextField(10); //10 cols
         add(tfInput);
         tfInput.addActionListener(new TFInputListener());
 
-        add(new Label("The accumulated sum is: "));
+        add(new Label("Ho Tuan Huy 20225856 - The accumulated sum is: "));
 
         tfOutput = new TextField(10);
         tfOutput.setEditable(false);
         add(tfOutput);
 
-        setTitle("AWT Accumulator");
+        setTitle("Ho Tuan Huy 20225856 - AWT Accumulator");
         setSize(350, 120); //w and h
         setVisible(true);
     }
