@@ -26,6 +26,7 @@ public class DigitalVideoDisc extends Disc implements Playable {
         this.setLength(length);
     }
 
+
     //Method to print details of a DVD
     @Override
     public void print(){

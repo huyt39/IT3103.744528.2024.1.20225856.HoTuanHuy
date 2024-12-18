@@ -42,11 +42,11 @@ public class Store {
 
     //Getters and Setters
     //Getter for the list of items in the store
-    public List<Media> getItemsInStore() {return itemsInStore;}
+    public ArrayList<Media> getItemsInStore() {return new ArrayList<>(itemsInStore);}
 
     //Setter for the list of items in the store
     public void setItemsInStore(List<Media> itemsInStore){
-        this.itemsInStore = itemsInStore;
+        this.itemsInStore = new ArrayList<>(itemsInStore);
     }
 
     public void print(){
