@@ -1,0 +1,160 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "HuyHT_DeXX_20241_20225856.Main",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Aims",
+            "request": "launch",
+            "mainClass": "Lab.AimsProject.src.hust.soict.hedspi.aims.Aims",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "StoreScreen",
+            "request": "launch",
+            "mainClass": "Lab.AimsProject.src.hust.soict.hedspi.aims.screen.StoreScreen",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "CartTest",
+            "request": "launch",
+            "mainClass": "Lab.AimsProject.src.hust.soict.hedspi.test.CartTest",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "StoreTest",
+            "request": "launch",
+            "mainClass": "Lab.AimsProject.src.hust.soict.hedspi.test.StoreTest",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "TestPassingParameter",
+            "request": "launch",
+            "mainClass": "Lab.AimsProject.src.hust.soict.hedspi.test.TestPassingParameter",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "AWTAccumulator",
+            "request": "launch",
+            "mainClass": "Lab.GUIProject.src.hust.soict.hedspi.swing.AWTAccumulator",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "NumberGrid",
+            "request": "launch",
+            "mainClass": "Lab.GUIProject.src.hust.soict.hedspi.swing.NumberGrid",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "SwingAccumulator",
+            "request": "launch",
+            "mainClass": "Lab.GUIProject.src.hust.soict.hedspi.swing.SwingAccumulator",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Calculate",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.TheVeryFirstJavaPrograms.Calculate",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Equation",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.TheVeryFirstJavaPrograms.Equation",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "FirstDialog",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.TheVeryFirstJavaPrograms.FirstDialog",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "HelloNameDialog",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.TheVeryFirstJavaPrograms.HelloNameDialog",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.TheVeryFirstJavaPrograms.HelloWorld",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ShowTwoNumbers",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.TheVeryFirstJavaPrograms.ShowTwoNumbers",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ConcatenationInLoops",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.garbage.ConcatenationInLoops",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "GarbageCreator",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.garbage.GarbageCreator",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "NoGarbage",
+            "request": "launch",
+            "mainClass": "Lab.OtherProjects.hust.soict.hedspi.Lab01.garbage.NoGarbage",
+            "projectName": "IT3103.744528.2024.1.20225856.HoTuanHuy_38eca84a",
+            "vmArgs": "--module-path /Users/macbook/Downloads/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
