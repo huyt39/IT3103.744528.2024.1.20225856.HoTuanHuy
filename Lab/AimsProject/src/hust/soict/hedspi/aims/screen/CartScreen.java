@@ -1,6 +1,6 @@
 package Lab.AimsProject.src.hust.soict.hedspi.aims.screen;
 
-import Lab.AimsProject.src.hust.soict.hedspi.cart.Cart;
+import src.hust.soict.hedspi.cart.Cart;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ import java.io.IOException;
 public class CartScreen extends JFrame {
     private Cart cart;
 
-    public CartScreen(Cart cart) {
+    public CartScreen(Cart cart, CartScreenController controller) {
         super();
         this.cart = cart;
         JFXPanel fxPanel = new JFXPanel();
@@ -24,7 +24,6 @@ public class CartScreen extends JFrame {
             public void run() {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("cart.fxml"));
-                    CartScreenController controller = new CartScreenController(cart);
                     loader.setController(controller);
                     Parent root = loader.load();
                     fxPanel.setScene(new Scene(root));

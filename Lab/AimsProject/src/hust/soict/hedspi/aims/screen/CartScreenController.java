@@ -23,10 +23,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.geometry.Pos;
+import javafx.application.Platform;
 
 
 public class CartScreenController {
     private Cart cart;
+
     @FXML
     private Button btnPlaceOrder;
     @FXML
@@ -46,9 +48,9 @@ public class CartScreenController {
     @FXML
     private TableColumn<Media, String> colMediaTitle;
     @FXML
-    private TableColumn<Media, String> colMediacategory;
+    private TableColumn<Media, String> colMediaCategory;
     @FXML
-    private TableColumn<Media,Float> colMediaCost;
+    private TableColumn<Media, Float> colMediaCost;
     @FXML
     private Label totalPrice;
 
@@ -60,66 +62,63 @@ public class CartScreenController {
     @FXML
     private void initialize() {
         colMediaTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-        colMediacategory.setCellValueFactory(new PropertyValueFactory<>("category"));
+        colMediaCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
         colMediaCost.setCellValueFactory(new PropertyValueFactory<>("cost"));
         tblMedia.setItems(FXCollections.observableList(this.cart.getItemsOrdered()));
         tblMedia.setPlaceholder(new Label("No item in cart"));
         btnPlay.setVisible(false);
         btnRemove.setVisible(false);
-        btnRemove.setOnAction(event -> {
-            Media media = tblMedia.getSelectionModel().getSelectedItem();
-            cart.removeMedia(media);
-            totalPrice.setText(cart.totalCost() +"$");
-            tblMedia.setItems(FXCollections.observableList(cart.getItemsOrdered()));
-        });
-        tfFilter.textProperty().addListener((observableValue, s, t1) -> showFilterMedia(t1));
+
+        btnRemove.setOnAction(event -> btnRemovePressed());
+        tfFilter.textProperty().addListener((observableValue, oldValue, newValue) -> showFilterMedia(newValue));
 
         tblMedia.getSelectionModel().selectedItemProperty().addListener(
-                (observableValue, media, t1) -> updateButtonBar(t1)
+                (observableValue, oldMedia, newMedia) -> updateButtonBar(newMedia)
         );
         totalPrice.setText(cart.totalCost() + "$");
 
         btnPlay.setOnAction(event -> {
             JDialog playDialog = MediaStore.createPlayDialog(tblMedia.getSelectionModel().getSelectedItem());
-            playDialog.setVisible(true);
-            playDialog.setSize(300,200);
-            playDialog.pack();
+            if (playDialog != null) {
+                playDialog.setVisible(true);
+                playDialog.setSize(300, 200);
+                playDialog.pack();
+            }
         });
 
         btnPlaceOrder.setOnAction(event -> {
             createPopUp();
             cart.getItemsOrdered().clear();
-            tblMedia.setItems(FXCollections.observableList(cart.getItemsOrdered()));
-            totalPrice.setText(cart.totalCost() + "$");
+            updateCart();
         });
     }
 
     @FXML
     void updateButtonBar(Media media) {
-        btnRemove.setVisible(true);
+        btnRemove.setVisible(media != null);
         btnPlay.setVisible(media instanceof Playable);
     }
 
     @FXML
-    void showFilterMedia(String t1) {
-        if (t1 == null || t1.trim().isEmpty()) {
+    void showFilterMedia(String input) {
+        if (input == null || input.trim().isEmpty()) {
             tblMedia.setItems(FXCollections.observableList(cart.getItemsOrdered()));
             return;
         }
 
         if (filterCategory.getSelectedToggle() == radioBtnFilterTitle) {
-            Media media = cart.searchByTitle(t1);
-            if (media != null) {
-                tblMedia.setItems(FXCollections.observableList(Collections.singletonList(media)));
+            Media result = cart.searchByTitle(input);
+            if (result != null) {
+                tblMedia.setItems(FXCollections.observableList(Collections.singletonList(result)));
             } else {
                 tblMedia.setItems(FXCollections.observableList(new ArrayList<>()));
             }
         } else if (filterCategory.getSelectedToggle() == radioBtnFilterId) {
             try {
-                int id = Integer.parseInt(t1.trim());
-                Media media = cart.searchByID(id);
-                if (media != null) {
-                    tblMedia.setItems(FXCollections.observableList(Collections.singletonList(media)));
+                int id = Integer.parseInt(input.trim());
+                Media result = cart.searchByID(id); // Sử dụng đúng tên phương thức searchByID
+                if (result != null) {
+                    tblMedia.setItems(FXCollections.observableList(Collections.singletonList(result)));
                 } else {
                     tblMedia.setItems(FXCollections.observableList(new ArrayList<>()));
                 }
@@ -131,21 +130,37 @@ public class CartScreenController {
 
     @FXML
     void createPopUp() {
-        Stage popUpWindow =new Stage();
+        Stage popUpWindow = new Stage();
         popUpWindow.initModality(Modality.APPLICATION_MODAL);
         popUpWindow.setTitle("Place order");
 
-        Label label1 = new Label("You have place your order !");
-        label1.setFont(Font.font("Arial", FontWeight.BOLD,14));
+        Label label1 = new Label("You have placed your order!");
+        label1.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         Label label2 = new Label("Your bill total is " + cart.totalCost() + "$");
-        Button button1= new Button("OK !");
+        Button button1 = new Button("OK!");
         label2.setTextFill(Color.RED);
         button1.setOnAction(e -> popUpWindow.close());
-        VBox layout= new VBox(10);
-        layout.getChildren().addAll(label1, label2,button1);
+        VBox layout = new VBox(10);
+        layout.getChildren().addAll(label1, label2, button1);
         layout.setAlignment(Pos.CENTER);
-        Scene scene1= new Scene(layout, 300, 200);
+        Scene scene1 = new Scene(layout, 300, 200);
         popUpWindow.setScene(scene1);
         popUpWindow.show();
+    }
+
+    @FXML
+    void btnRemovePressed() {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        if (media != null) {
+            cart.removeMedia(media);
+            updateCart();
+        }
+    }
+
+    public void updateCart() {
+        Platform.runLater(() -> {
+            tblMedia.setItems(FXCollections.observableList(cart.getItemsOrdered()));
+            totalPrice.setText(cart.totalCost() + "$");
+        });
     }
 }
