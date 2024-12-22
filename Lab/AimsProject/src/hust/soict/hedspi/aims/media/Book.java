@@ -8,8 +8,9 @@ public class Book extends Media {
     private List<String> authors = new ArrayList<>();
 
     //Constructor
-    public Book(int id, String title, String category, float cost){
-        super(id, title, category, cost);
+    public Book(String title, String category, float cost, List<String> authors){
+        super(title, category, cost);
+        this.authors = authors;
     }
     public Book(String title, String category, float cost){
         super(title, category, cost);
@@ -46,8 +47,8 @@ public class Book extends Media {
     @Override
     public void print(){
         System.out.print(getId() + ". Book - "
-        + getTitle() + " - "
-        + getCategory() + " - ");
+                + getTitle() + " - "
+                + getCategory() + " - ");
         for (String author: authors){
             System.out.print(author + " - ");
         }

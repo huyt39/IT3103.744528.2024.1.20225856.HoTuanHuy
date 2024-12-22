@@ -13,6 +13,10 @@ public class Disc extends Media {
         super(title, category, cost);
     }
 
+    public Disc(String title, String category, float cost) { // Constructor mới
+        super(title, category, cost);
+    }
+
     //Constructor for a disc with ID, title, category, cost, director and length
     public Disc(int id, String title, String category, float cost, String director, int length){
         super(id, title, category, cost);
@@ -30,5 +34,4 @@ public class Disc extends Media {
     public int getLength(){return length;}
     //Setter for the length of the disc content
     public void setLength(int length){this.length = length;}
-    
 }

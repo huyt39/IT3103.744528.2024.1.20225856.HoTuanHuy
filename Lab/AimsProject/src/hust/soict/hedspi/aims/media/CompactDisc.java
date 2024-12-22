@@ -11,13 +11,23 @@ public class CompactDisc extends Disc implements Playable {
 
     //Constructor
     public CompactDisc(int id, String title, String category, float cost,
-    String director, int length, String artist){
+                       String director, int length, String artist){
         super(id, title, category, cost, director, length);
         this.artist = artist;
     }
     public CompactDisc(String title, String category, String artist, float cost){
         super(title, category, artist, cost);
     }
+
+    public CompactDisc(String title, String category, String artist,
+                       List<Track> tracks, float cost) {
+        super(title, category, cost);
+        this.artist = artist;
+        this.tracks = tracks;
+    }
+
+
+
 
 
     //Getter and Setter
@@ -78,12 +88,12 @@ public class CompactDisc extends Disc implements Playable {
     @Override
     public void print(){
         System.out.println(getId() + ". CD - "
-        +getTitle() + " - "
-        + getCategory() + " - "
-        + getDirector() + " - "
-        + artist + " - "
-        + getLength() + ": "
-        +getCost() + "$");
+                +getTitle() + " - "
+                + getCategory() + " - "
+                + getDirector() + " - "
+                + artist + " - "
+                + getLength() + ": "
+                +getCost() + "$");
     }
     
 }
